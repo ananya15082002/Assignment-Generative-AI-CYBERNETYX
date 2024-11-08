@@ -34,52 +34,41 @@ cd Assignment-Generative-AI-CYBERNETYX
 2. Install Dependencies
 Install the necessary libraries:
 
-bash
-Copy code
 pip install -r requirements.txt
 
 3. Start the FastAPI Server
 Run the server locally with:
 
-bash
-Copy code
 uvicorn main:app --reload
+
 The server should now be accessible at http://127.0.0.1:8000.
 
 
-Example using ingest_test.py
+## Example using ingest_test.py
+
 Navigate to the tests folder:
-bash
-Copy code
 cd tests
+
 Run ingest_test.py to upload multiple documents:
-bash
-Copy code
 python ingest_test.py
+
 You will be prompted to enter file paths. For example:
-plaintext
-Copy code
+
 Enter the number of files to upload: 3
 Enter the path for file 1: C:\Users\asus\Desktop\GenAIAssignment\docs\example_files\ai.docx
 Enter the path for file 2: C:\Users\asus\Desktop\GenAIAssignment\docs\example_files\genai.pdf
 Enter the path for file 3: C:\Users\asus\Desktop\GenAIAssignment\docs\example_files\ml.txt
+
 2. Query Documents
 The /query endpoint allows querying documents based on content similarity by embedding the query text and finding relevant documents.
 
-Example using curl
-bash
-Copy code
-curl -X POST "http://127.0.0.1:8000/query" -H "Content-Type: application/json" -d "{\"query\": \"Artificial Intelligence\"}"
 Example using query_test.py
 Run query_test.py to query based on user input:
 
-bash
-Copy code
 python query_test.py
 Example interaction:
 
-plaintext
-Copy code
+
 Enter your query text: AI
 Query Results:
 
@@ -89,13 +78,9 @@ Text Preview: Artificial Intelligence (AI) refers to the simulation of human int
 3. Concurrency Test
 To test how well the system handles concurrent requests, run the concurrency_test.py script:
 
-bash
-Copy code
 python concurrency_test.py
 Example interaction:
 
-plaintext
-Copy code
 Enter the number of queries to send concurrently: 2
 Enter query 1: AI
 Enter query 2: intelligent
